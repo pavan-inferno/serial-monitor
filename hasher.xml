@@ -1,0 +1,251 @@
+<?xml version="1.0"?>
+<!--Generated with glade3 3.4.5 on Sun Mar 29 03:28:50 2009 -->
+<interface>
+  <object class="GtkUIManager" id="uimanager1">
+    <child>
+      <object class="GtkActionGroup" id="actiongroup1">
+        <child>
+          <object class="GtkAction" id="menuitem1">
+            <property name="name">menuitem1</property>
+            <property name="label" translatable="yes">_File</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkAction" id="imagemenuitem1">
+            <property name="stock_id" translatable="yes">gtk-new</property>
+            <property name="name">imagemenuitem1</property>
+            <signal handler="file_new" name="activate"/>
+          </object>
+        </child>
+        <child>
+          <object class="GtkAction" id="imagemenuitem2">
+            <property name="stock_id" translatable="yes">gtk-open</property>
+            <property name="name">imagemenuitem2</property>
+            <signal handler="file_open" name="activate"/>
+          </object>
+        </child>
+        <child>
+          <object class="GtkAction" id="imagemenuitem3">
+            <property name="stock_id" translatable="yes">gtk-save</property>
+            <property name="name">imagemenuitem3</property>
+            <signal handler="file_save" name="activate"/>
+          </object>
+        </child>
+        <child>
+          <object class="GtkAction" id="imagemenuitem4">
+            <property name="stock_id" translatable="yes">gtk-save-as</property>
+            <property name="name">imagemenuitem4</property>
+            <signal handler="file_save_as" name="activate"/>
+          </object>
+        </child>
+        <child>
+          <object class="GtkAction" id="imagemenuitem5">
+            <property name="stock_id" translatable="yes">gtk-quit</property>
+            <property name="name">imagemenuitem5</property>
+            <signal handler="gtk_main_quit" name="activate"/>
+          </object>
+        </child>
+        <child>
+          <object class="GtkAction" id="menuitem2">
+            <property name="name">menuitem2</property>
+            <property name="label" translatable="yes">_Edit</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkAction" id="imagemenuitem6">
+            <property name="stock_id" translatable="yes">gtk-cut</property>
+            <property name="name">imagemenuitem6</property>
+            <signal handler="edit_cut" name="activate"/>
+          </object>
+        </child>
+        <child>
+          <object class="GtkAction" id="imagemenuitem7">
+            <property name="stock_id" translatable="yes">gtk-copy</property>
+            <property name="name">imagemenuitem7</property>
+            <signal handler="edit_copy" name="activate"/>
+          </object>
+        </child>
+        <child>
+          <object class="GtkAction" id="imagemenuitem8">
+            <property name="stock_id" translatable="yes">gtk-paste</property>
+            <property name="name">imagemenuitem8</property>
+            <signal handler="edit_paste" name="activate"/>
+          </object>
+        </child>
+        <child>
+          <object class="GtkAction" id="imagemenuitem9">
+            <property name="stock_id" translatable="yes">gtk-delete</property>
+            <property name="name">imagemenuitem9</property>
+            <signal handler="edit_delete" name="activate"/>
+          </object>
+        </child>
+        <child>
+          <object class="GtkAction" id="menuitem4">
+            <property name="name">menuitem4</property>
+            <property name="label" translatable="yes">_Help</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkAction" id="imagemenuitem10">
+            <property name="stock_id" translatable="yes">gtk-about</property>
+            <property name="name">imagemenuitem10</property>
+            <signal handler="help_about" name="activate" object="aboutdialog1"/>
+          </object>
+        </child>
+      </object>
+    </child>
+    <ui>
+      <menubar name="menubar1">
+        <menu action="menuitem1">
+          <menuitem action="imagemenuitem1"/>
+          <menuitem action="imagemenuitem2"/>
+          <menuitem action="imagemenuitem3"/>
+          <menuitem action="imagemenuitem4"/>
+          <separator/>
+          <menuitem action="imagemenuitem5"/>
+        </menu>
+        <menu action="menuitem2">
+          <menuitem action="imagemenuitem6"/>
+          <menuitem action="imagemenuitem7"/>
+          <menuitem action="imagemenuitem8"/>
+          <menuitem action="imagemenuitem9"/>
+        </menu>
+        <menu action="menuitem4">
+          <menuitem action="imagemenuitem10"/>
+        </menu>
+      </menubar>
+    </ui>
+  </object>
+  <object class="GtkWindow" id="window1">
+    <property name="visible">True</property>
+    <property name="title" translatable="yes">Password Hasher</property>
+    <signal handler="gtk_main_quit" name="destroy"/>
+    <signal handler="key_pressed" name="key_press_event"/>
+    <child>
+      <object class="GtkVBox" id="vbox1">
+        <property name="visible">True</property>
+        <child>
+          <object class="GtkMenuBar" constructor="uimanager1" id="menubar1">
+            <property name="visible">True</property>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkEntry" id="entry1">
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="text" translatable="yes">password</property>
+          </object>
+          <packing>
+            <property name="position">1</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkHBox" id="hbox1">
+            <property name="visible">True</property>
+            <property name="homogeneous">True</property>
+            <child>
+              <object class="GtkButton" id="button1">
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+                <property name="label" translatable="yes">Generate Hash</property>
+                <signal handler="generate_hash" name="clicked"/>
+              </object>
+            </child>
+            <child>
+              <object class="GtkButton" id="button2">
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+                <property name="label" translatable="yes">Check Hash</property>
+                <signal handler="check_hash" name="clicked"/>
+              </object>
+              <packing>
+                <property name="position">1</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="position">2</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkEntry" id="entry2">
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+          </object>
+          <packing>
+            <property name="position">3</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkStatusbar" id="statusbar1">
+            <property name="visible">True</property>
+            <property name="spacing">2</property>
+            <child>
+              <object class="GtkLabel" id="label1">
+                <property name="visible">True</property>
+                <property name="label" translatable="yes">status</property>
+              </object>
+              <packing>
+                <property name="position">1</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="position">4</property>
+          </packing>
+        </child>
+      </object>
+    </child>
+  </object>
+  <object class="GtkAboutDialog" id="aboutdialog1">
+    <property name="border_width">5</property>
+    <property name="title" translatable="yes">About Glade</property>
+    <property name="resizable">False</property>
+    <property name="window_position">GTK_WIN_POS_CENTER_ON_PARENT</property>
+    <property name="type_hint">GDK_WINDOW_TYPE_HINT_DIALOG</property>
+    <property name="has_separator">False</property>
+    <property name="program_name">Password Hasher</property>
+    <property name="version">0.5</property>
+    <property name="copyright" translatable="yes">Copyright 2009 The Nerd Show</property>
+    <property name="comments" translatable="yes">Generates a password hash and
+checks its value.
+</property>
+    <child internal-child="vbox">
+      <object class="GtkVBox" id="dialog-vbox1">
+        <property name="visible">True</property>
+        <property name="spacing">2</property>
+        <child>
+          <object class="GtkLinkButton" id="linkbutton1">
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="receives_default">True</property>
+            <property name="has_tooltip">True</property>
+            <property name="label" translatable="yes">The Nerd Show</property>
+            <property name="relief">GTK_RELIEF_NONE</property>
+            <property name="uri">http://thenerdshow.com</property>
+            <signal handler="link_click" name="clicked"/>
+          </object>
+          <packing>
+            <property name="position">2</property>
+          </packing>
+        </child>
+        <child internal-child="action_area">
+          <object class="GtkHButtonBox" id="dialog-action_area1">
+            <property name="visible">True</property>
+            <property name="layout_style">GTK_BUTTONBOX_END</property>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="pack_type">GTK_PACK_END</property>
+          </packing>
+        </child>
+      </object>
+    </child>
+  </object>
+</interface>
